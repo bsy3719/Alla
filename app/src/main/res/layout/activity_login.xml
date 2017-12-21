@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fave.android.alla.activity.LoginActivity"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/id_edit_text"
+        android:hint="@string/id_input"
+        android:textSize="16sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/LoginPadding"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/password_edit_text"
+        android:hint="@string/password_input"
+        android:textSize="16sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/LoginPadding"
+        android:inputType="textPassword"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/login_button"
+        android:text="@string/login"
+        android:background="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/LoginPadding"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:id="@+id/find_password_text_view"
+        android:text="@string/find_password"
+        android:textSize="14sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"/>
+
+    <com.kakao.usermgmt.LoginButton
+        android:id="@+id/com_kakao_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        style="@style/LoginPadding"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_login_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:id="@+id/sign_up_text_view"
+        android:text="@string/sign_up"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+</layout>

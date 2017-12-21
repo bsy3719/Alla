@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <!--<item
+        android:id="@+id/menu_item_card_news_list"
+        android:icon="@drawable/ic_menu_edit"
+        android:title="@string/new_card_news"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/menu_item_login"
+        android:title="@string/login"
+        app:showAsAction="never"/>-->
+
+    <item
+        android:id="@+id/menu_item_latest"
+        android:title="@string/menu_latest"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_item_like"
+        android:title="@string/menu_like"
+        app:showAsAction="never"/>
+
+</menu>

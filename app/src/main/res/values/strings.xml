@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Alla</string>
+    <string name="new_card_news">새로운 카드뉴스</string>
+    <string name="write_card_news_check">완료</string>
+
+    <string name="login">로그인</string>
+    <string name="logout">로그아웃</string>
+
+    <string name="loading">로딩중...</string>
+
+    <string name="write_title_edit_text">제목을 입력하세요</string>
+    <string name="write_content_edit_text">내용을 입력하세요</string>
+
+    <string name="kakao_app_key">3dc98938862690685b3944a3ade2ece0</string>
+
+    <string name="tab_home">홈</string>
+    <string name="tab_people">그룹</string>
+    <string name="tab_write">글쓰기</string>
+    <string name="tab_person">마이페이지</string>
+
+    <string name="sign_up">처음 오셨나요? 가입하기</string>
+    <string name="find_password">비밀번호를 잊으셨나요?</string>
+    <string name="password_input">비밀번호를 입력해주세요.</string>
+    <string name="id_input">이메일을 입력해주세요.</string>
+    <string name="password_re_input">비밀번호를 한번더 입력해주세요.</string>
+    <string name="sign_up_button">회원가입</string>
+
+    <string name="require_login">로그인이 필요한 서비스입니다.</string>
+
+    <string name="confirm">확인</string>
+
+    <string name="menu_latest">최신순</string>
+    <string name="menu_like">인기순</string>
+
+
+</resources>
