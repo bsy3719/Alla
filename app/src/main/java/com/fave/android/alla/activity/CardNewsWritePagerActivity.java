@@ -26,6 +26,7 @@ import com.fave.android.alla.network.NetworkService.CardNewsItemWrite;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.sangcomz.fishbun.FishBun;
+import com.sangcomz.fishbun.adapter.image.impl.GlideAdapter;
 import com.sangcomz.fishbun.define.Define;
 
 import java.io.File;
@@ -44,7 +45,7 @@ import retrofit2.Response;
 public class CardNewsWritePagerActivity extends BaseActivitiy implements CardNewsWriteItemFragment.WriteListener{
 
     private static final int REQUEST_CODE_IMAGE_PICKER = 200;
-    private static final String TAG = "CardNewsWriteAcitvity";
+    private static final String TAG = "WriteTest";
 
     private ActivityCardNewsWritePagerBinding mBinding;
     private List<Uri> mUriList;
@@ -84,7 +85,8 @@ public class CardNewsWritePagerActivity extends BaseActivitiy implements CardNew
 
     //fishbun을 이용하여 사진을 가져옴
     private void getPhoto() {
-        FishBun.with(this).MultiPageMode()
+        FishBun.with(this).setImageAdapter(new GlideAdapter())
+                .setMaxCount(10)
                 .setIsUseDetailView(false)
                 .setCamera(true)
                 .exceptGif(true)
@@ -116,6 +118,7 @@ public class CardNewsWritePagerActivity extends BaseActivitiy implements CardNew
     private void getCompressedImageFile(){
         for (int i = 0; i < mUriList.size(); i++) {
             String path = ImageUtil.getPath(CardNewsWritePagerActivity.this, mUriList.get(i));
+            Log.d(TAG, path);
 
             try {
                 File compressedImageFile = new Compressor(this).compressToFile(new File(path));
@@ -155,6 +158,8 @@ public class CardNewsWritePagerActivity extends BaseActivitiy implements CardNew
             public void onResponse(Call<CardNewsListWrite> call, Response<CardNewsListWrite> response) {
                 int errorCode = response.body().errorCode;
                 int lastId = response.body().lastId;
+                Log.d(TAG, "user num : " + String.valueOf(mLoginInfo.getUserNo()));
+                Log.d(TAG,"last id : "+ String.valueOf(lastId));
 
                 if (errorCode == 100){
                     for (int i = 0; i < mWriteItemList.size(); i++) {
@@ -188,10 +193,11 @@ public class CardNewsWritePagerActivity extends BaseActivitiy implements CardNew
                 int errorCode = response.body().errorCode;
                 int sq = response.body().sq;
 
-                Log.d(TAG, String.valueOf(errorCode) + String.valueOf(sq));
+                Log.d(TAG, "errorCode : " + String.valueOf(errorCode));
+                //Log.d(TAG, String.valueOf(errorCode) + String.valueOf(sq));
 
                 if (errorCode == 100){
-                    //Toast.makeText(CardNewsWritePagerActivity.this, "업로드 완료했습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CardNewsWritePagerActivity.this, "업로드 완료했습니다.", Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
 

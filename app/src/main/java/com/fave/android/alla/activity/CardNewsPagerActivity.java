@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.fave.android.alla.fragment.CardNewsItemFragment;
 import com.fave.android.alla.item.CardNews;
@@ -31,6 +32,7 @@ public class CardNewsPagerActivity extends AppCompatActivity {
     private ActivityCardNewsPagerBinding mBinding;
     private List<CardNews> mCardNewsList;
     private UserInfo mUserInfo;
+    private static final String TAG = "CardNewsPager";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class CardNewsPagerActivity extends AppCompatActivity {
 
     private void getCardNews(){
         int card_news_pk = getIntent().getIntExtra(EXTRA_CARD_NEWS_PK, 0);
+        Log.d(TAG, String.valueOf(card_news_pk));
 
         NetworkService service = new RestClient().getClient(this).create(NetworkService.class);
         Call<CardNewItem> call = service.repoCardNewsItem(card_news_pk);
@@ -49,6 +52,7 @@ public class CardNewsPagerActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<CardNewItem> call, Response<CardNewItem> response) {
                 int errorCode = response.body().errorCode;
+
 
                 //서버상 문제가 없을때
                 if (errorCode == 100) {

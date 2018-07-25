@@ -154,7 +154,8 @@ public class CardNewsListFragment extends Fragment{
             @Override
             public void onResponse(Call<CardNewsList> call, Response<CardNewsList> response) {
                 int errorCode = response.body().errorCode;
-
+                Log.d(TAG, "errorCode =" + String.valueOf(errorCode));
+                Log.d(TAG, response.body().toString());
                 //서버상 문제가 없을때
                 if (errorCode == 100){
                     mCardNewsList = response.body().cardNews;
@@ -173,12 +174,14 @@ public class CardNewsListFragment extends Fragment{
                     }
 
                 }else{
+                    Log.d(TAG, "errorCode not founded");
 
                 }
             }
 
             @Override
             public void onFailure(Call<CardNewsList> call, Throwable t) {
+                Log.d(TAG, "connection fail : " + t);
 
             }
 

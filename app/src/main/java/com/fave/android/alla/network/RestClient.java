@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RestClient {
-    private static final String BASE_URL="http://13.124.217.208/alla/";
+    private static final String BASE_URL="http://13.124.105.203/alla/";
 
     public Retrofit getClient(Context context) {
 
